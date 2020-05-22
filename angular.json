@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ArtGallery"
+    }
+  },
+  "defaultProject": "ArtGallery",
+  "cli": {
+    "analytics": "5e6291f1-9d91-43a3-8aff-9ba51e8c6cae"
+  }
 }

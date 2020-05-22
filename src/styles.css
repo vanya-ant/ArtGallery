@@ -1,1 +1,399 @@
-/* You can add global styles to this file, and also import other style files */
+/*reset*/
+* {
+  padding: 0;
+  margin:0;
+}
+
+body, html {
+  box-sizing: border-box;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+}
+
+:before, :after {
+  box-sizing: inherit;
+}
+/*main*/
+.container {
+  height: auto;
+  width: 100vw;
+}
+
+.wrapper {
+  height: 100%;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/*header-nav*/
+header {
+  height: 4em;
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.nav {
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.hidden {
+  display: flex;
+}
+
+.hidden li {
+  list-style: none;
+  padding-left: 2em;
+}
+
+.hidden li a {
+  text-decoration: none;
+  padding-left: 1em;
+  color: inherit;
+}
+
+.nav .search {
+  padding-left: 2em;
+}
+
+.categories ul li {
+  padding: 1em;
+}
+
+.select_categories::selection{
+  color: black;
+}
+
+select {
+  background-color: white;
+  color: black;
+  display: block;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.nav .user {
+  display: flex;
+  padding-right: 2em;
+}
+
+.user .lang {
+  padding-left: 2em;
+}
+
+.nav select {
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 1.05em;
+}
+
+.nav select:focus {
+  outline: none;
+}
+
+.nav .search input {
+  border: 0.02em solid lightgrey;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 15em;
+  height: 2em;
+
+}
+/*footer*/
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+}
+
+footer div {
+  margin: 0 auto;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+footer  ul li {
+  list-style: none;
+  padding-bottom: 0.5em;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+footer h2 {
+  padding-bottom: 1em;
+  text-align: center;
+}
+
+.footer-social {
+}
+/*home*/
+.slider {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 30em;
+  padding: 2em;
+  margin: 0 auto;
+}
+
+.slider > img {
+  width: 100%;
+  object-fit: cover;
+  object-position: 100% 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: grey;
+  opacity: 0.6;
+}
+
+.slider img:hover  {
+  opacity: 1;
+  transition: opacity ease-in-out 0.2s;
+}
+
+.main-page-button {
+  background: black;
+  color: white;
+  width: 15em;
+  height: 5em;
+  text-align: center;
+  font: inherit;
+  border: none;
+  position: absolute;
+  left: 8em;
+  bottom: 20em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*gallery*/
+.gallery {
+  width: 100%;
+  height: 100%;
+  column-count: 3;
+  margin: 0.5em;
+  align-content: flex-start;
+}
+
+.gallery-item {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 2em;
+  margin: 0.5em;
+  flex-grow: 1;
+  flex-flow: column wrap;
+  overflow: auto;
+}
+
+.gallery-item img {
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.gallery-item h4 {
+  padding-bottom: 1em;
+}
+
+.order-item {
+  padding-top: 1em;
+}
+
+.order-item p {
+  padding-bottom: 0.5em;
+}
+
+.add-to-cart {
+  background: black;
+  color: white;
+  font: inherit;
+  width: 6em;
+  height: 3em;
+  text-align: center;
+  border: none;
+}
+/*login-register*/
+.login-register {
+  background: lightgray;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+}
+
+.login-register-img {
+  width: 100%;
+}
+
+.login-register-img img {
+  width: 100%;
+  height: 10em;
+  object-fit: cover;
+  object-position: 100% 40%;
+  background: black;
+  opacity: 0.7;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login h2 {
+  text-shadow: 0 0 0.2em darkgrey;
+  padding-bottom: 0.5em;
+}
+
+.login form {
+  background: white;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  margin: 1em auto;
+}
+
+.login label {
+  padding-bottom: 1em;
+  padding-top: 1em;
+  text-align: left;
+}
+
+.login-register-button {
+  background: black;
+  color: white;
+  text-align: center;
+  border: none;
+  width: 10em;
+  height: 3em;
+  margin-top: 1em;
+  font: inherit;
+}
+
+.login input {
+  width: 10em;
+  height: 2em;
+  text-align: center;
+}
+/*artists*/
+.artists-list {
+  max-width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 40% 40%;
+  grid-column-gap: 0.5em;
+  grid-row-gap: 0.5em;
+  justify-content: center;
+}
+
+.artist-item img {
+  object-fit: cover;
+  width: 100%;
+  height: 40em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.artist-info {
+  top: 6em;
+  left: 1.5em;
+  color: white;
+  position: relative;
+}
+/*admin-add-item*/
+.add-item {
+  background: lightgray;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+}
+
+.add-item form {
+  background: white;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  margin: 1em auto;
+}
+
+.add-item-button {
+  background: black;
+  color: white;
+  text-align: center;
+  border: none;
+  width: 10em;
+  height: 3em;
+  margin-top: 1em;
+  font: inherit;
+}
+
+.add-item label {
+  padding-bottom: 1em;
+  padding-top: 1em;
+  text-align: left;
+}
+
+.add-item input {
+  width: 10em;
+  height: 2em;
+  text-align: center;
+  font: inherit;
+}
+
+.add-item textarea {
+  text-align: center;
+  font: inherit;
+}
+
+/*admin-add-artist*/
+.add-artist {
+  background: lightgray;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+}
+
+.add-artist form {
+  background: white;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  margin: 1em auto;
+}
+
+.add-item-button {
+  background: black;
+  color: white;
+  text-align: center;
+  border: none;
+  width: 10em;
+  height: 3em;
+  margin-top: 1em;
+  font: inherit;
+}
+
+.add-artist label {
+  padding-bottom: 1em;
+  padding-top: 1em;
+  text-align: left;
+}
+
+.add-artist input {
+  width: 10em;
+  height: 2em;
+  text-align: center;
+  font: inherit;
+}

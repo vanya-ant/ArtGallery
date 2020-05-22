@@ -1,0 +1,35 @@
+<style>
+  .slides {display:none;}
+</style>
+
+<div class="container">
+  <div class="wrapper">
+    <div class="slider">
+      <img class="slides" src="./././src/assets/img/evie-s-kqJfP-lrl-8-unsplash.jpg">
+      <img class="slides" src="./././src/assets/img/bianca-ackermann-4suxZjeCpYk-unsplash.jpg">
+      <img class="slides" src="./././src/assets/img/birmingham-museums-trust-wKlHsooRVbg-unsplash.jpg">
+      <img class="slides" src="./././src/assets/img/kelly-sikkema-tk9RQCq5eQo-unsplash.jpg">
+      <img class="slides" src="./././src/assets/img/michael-schaffler-s2ZEGZKlDj4-unsplash.jpg">
+      <img class="slides" src="./././src/assets/img/richard-dykes-SPuHHjbSso8-unsplash.jpg">
+      <img class="slides" src="./././src/assets/img/steve-johnson-3Sf_G9m0gcQ-unsplash.jpg">
+    </div>
+  </div>
+  <button class="main-page-button" onclick="">See our new items!</button>
+</div>
+
+<script>
+  var myIndex = 0;
+  carousel();
+
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("slides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+  }
+</script>

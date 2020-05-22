@@ -1,0 +1,80 @@
+header {
+  height: 4em;
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.nav {
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.hidden {
+  display: flex;
+}
+
+.hidden li {
+  list-style: none;
+  padding-left: 2em;
+}
+
+.hidden li a {
+  text-decoration: none;
+  padding-left: 1em;
+  color: inherit;
+}
+
+.nav .search {
+  padding-left: 2em;
+}
+
+.categories ul li {
+  padding: 1em;
+}
+
+.select_categories::selection{
+  color: black;
+}
+
+select {
+  background-color: white;
+  color: black;
+  display: block;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.nav .user {
+  display: flex;
+  padding-right: 2em;
+}
+
+.user .lang {
+  padding-left: 2em;
+}
+
+.nav select {
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 1.05em;
+}
+
+.nav select:focus {
+  outline: none;
+}
+
+.nav .search input {
+  border: 0.02em solid lightgrey;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 15em;
+  height: 2em;
+
+}

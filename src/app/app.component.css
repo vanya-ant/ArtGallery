@@ -1,0 +1,27 @@
+/*reset*/
+* {
+  padding: 0;
+  margin:0;
+}
+
+body, html {
+  box-sizing: border-box;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+}
+
+:before, :after {
+  box-sizing: inherit;
+}
+/*main*/
+.container {
+  height: auto;
+  width: 100vw;
+}
+
+.wrapper {
+  height: 100%;
+}
+
+button:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,33 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+}
+
+footer div {
+  margin: 0 auto;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+footer  ul li {
+  list-style: none;
+  padding-bottom: 0.5em;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+footer h2 {
+  padding-bottom: 1em;
+  text-align: center;
+}
+
+.footer-social {
+}

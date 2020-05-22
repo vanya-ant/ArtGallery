@@ -1,0 +1,36 @@
+.slider {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 30em;
+  padding: 2em;
+  margin: 0 auto;
+}
+
+.slider > img {
+  width: 100%;
+  object-fit: cover;
+  object-position: 100% 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: grey;
+  opacity: 0.6;
+}
+
+.slider img:hover  {
+  opacity: 1;
+  transition: opacity ease-in-out 0.2s;
+}
+
+.main-page-button {
+  background: black;
+  color: white;
+  width: 15em;
+  height: 5em;
+  text-align: center;
+  font: inherit;
+  border: none;
+  position: absolute;
+  left: 8em;
+  bottom: 20em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
