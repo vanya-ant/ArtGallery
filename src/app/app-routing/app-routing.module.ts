@@ -51,7 +51,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'artists-create',
+    path: 'artist-create',
     component: ArtistCreateComponent,
     loadChildren: () => import('../artists/artists.module').then(m => m.ArtistsModule),
     data: {
@@ -80,7 +80,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'project-create',
+    path: 'item-create',
     component: ItemCreateComponent,
     loadChildren: () => import('../items/items.module').then(m => m.ItemsModule),
     canActivate: [AuthGuard],

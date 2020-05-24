@@ -126,3 +126,7 @@ button:hover {
   text-align: center;
   font: inherit;
 }
+
+.toast-error {
+  color: orangered;
+}

@@ -7,10 +7,16 @@
       <div class="login">
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <h2>Login</h2>
-          <label for="login">Email address</label>
-          <input formControlName="email" id="login" type="email" placeholder="Enter email...">
+          <label for="email">Email address</label>
+          <input formControlName="email" id="email" type="email" placeholder="Enter email...">
+          <div *ngIf="email.dirty && email.invalid">
+            <p class="toast-error">Email not valid!</p>
+          </div>
           <label for="password">Password</label>
           <input id="password" formControlName="password" type="password" placeholder="Enter password...">
+          <div *ngIf="password.dirty && password.invalid">
+            <p class="toast-error">Password must be at least 6 characters long!</p>
+          </div>
           <button class="login-register-button" onclick="">Login</button>
         </form>
       </div>
