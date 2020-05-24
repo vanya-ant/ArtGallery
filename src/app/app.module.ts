@@ -18,7 +18,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import {AppRoutingModule} from "./app-routing/app-routing.module";
+import { AppRoutingModule } from "./app-routing/app-routing.module";
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import {AppRoutingModule} from "./app-routing/app-routing.module";
     ContactsComponent,
     ForgotPasswordComponent,
     PrivacyComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

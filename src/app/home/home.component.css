@@ -1,3 +1,5 @@
+.slides {display:none;}
+
 .slider {
   display: flex;
   justify-content: center;

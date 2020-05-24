@@ -5,12 +5,12 @@
         <img src="././assets/img/ann-di-B99wnwHvALg-unsplash.jpg">
       </div>
       <div class="login">
-        <form>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <h2>Login</h2>
           <label for="login">Email address</label>
-          <input id="login" type="email" placeholder="Enter email...">
+          <input formControlName="email" id="login" type="email" placeholder="Enter email...">
           <label for="password">Password</label>
-          <input id="password" type="password" placeholder="Enter password...">
+          <input id="password" formControlName="password" type="password" placeholder="Enter password...">
           <button class="login-register-button" onclick="">Login</button>
         </form>
       </div>

@@ -5,14 +5,17 @@
         <img src="././assets/img/heather-ford-YAHlwESEjXo-unsplash.jpg">
       </div>
       <div class="login">
-        <form>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <h2>Register</h2>
           <label for="register">Email address</label>
-          <input id="register" type="email" placeholder="Enter email...">
+          <input id="register" formControlName="email" type="email" placeholder="Enter email...">
           <label for="password">Password</label>
-          <input id="re-password" type="password" placeholder="Enter password...">
-          <label for="re-password">Repeat password</label>
-          <input id="password" type="password" placeholder="Repeat password...">
+          <input id="password" formControlName="password" type="password" placeholder="Enter password...">
+          <label for="passwordConfirm">Repeat password</label>
+          <input id="passwordConfirm" formControlName="passwordConfirm" type="password" placeholder="Repeat password...">
+          <div *ngIf="passwordConfirm.dirty && !passwordDoesMatch">
+            <p class="toast-error">Passwords dont' match!</p>
+          </div>
           <button class="login-register-button" onclick="">Register</button>
         </form>
       </div>

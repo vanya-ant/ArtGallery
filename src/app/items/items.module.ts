@@ -5,7 +5,6 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
 import { ItemCreateComponent } from './item-create/item-create.component';
 
 
-
 @NgModule({
   declarations: [ItemsComponent, ItemDetailsComponent, ItemCreateComponent],
   imports: [
