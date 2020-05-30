@@ -1,14 +1,16 @@
 <div class="container">
   <div class="wrapper">
-    <div class="slider">
-      <img class="slides" src="./assets/img/evie-s-kqJfP-lrl-8-unsplash.jpg">
-      <img class="slides" src="./assets/img/bianca-ackermann-4suxZjeCpYk-unsplash.jpg">
-      <img class="slides" src="./assets/img/birmingham-museums-trust-wKlHsooRVbg-unsplash.jpg">
-      <img class="slides" src="./assets/img/kelly-sikkema-tk9RQCq5eQo-unsplash.jpg">
-      <img class="slides" src="./assets/img/michael-schaffler-s2ZEGZKlDj4-unsplash.jpg">
-      <img class="slides" src="./assets/img/richard-dykes-SPuHHjbSso8-unsplash.jpg">
-      <img class="slides" src="./assets/img/steve-johnson-3Sf_G9m0gcQ-unsplash.jpg">
-    </div>
+   <div class="slider">
+     <owl-carousel-o [options]="customOptions">
+       <ng-template carouselSlide><img class="slides" src="./assets/img/evie-s-kqJfP-lrl-8-unsplash.jpg"></ng-template>
+       <ng-template carouselSlide><img  class="slides" src="./assets/img/bianca-ackermann-4suxZjeCpYk-unsplash.jpg"></ng-template>
+       <ng-template carouselSlide><img class="slides" src="./assets/img/birmingham-museums-trust-wKlHsooRVbg-unsplash.jpg"></ng-template>
+       <ng-template carouselSlide><img class="slides" src="./assets/img/kelly-sikkema-tk9RQCq5eQo-unsplash.jpg"></ng-template>
+       <ng-template carouselSlide><img class="slides" src="./assets/img/michael-schaffler-s2ZEGZKlDj4-unsplash.jpg"></ng-template>
+       <ng-template carouselSlide><img class="slides" src="./assets/img/richard-dykes-SPuHHjbSso8-unsplash.jpg"></ng-template>
+       <ng-template carouselSlide><img class="slides" src="./assets/img/steve-johnson-3Sf_G9m0gcQ-unsplash.jpg"></ng-template>
+     </owl-carousel-o>
+     <button class="main-page-button" onclick="">See our new items!</button>
+   </div>
   </div>
-  <button class="main-page-button" onclick="">See our new items!</button>
 </div>

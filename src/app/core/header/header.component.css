@@ -32,6 +32,10 @@ header {
   padding-left: 2em;
 }
 
+.nav .search label {
+  padding-right: 1em;
+}
+
 .categories ul li {
   padding: 1em;
 }

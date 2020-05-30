@@ -19,6 +19,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { PrivacyComponent } from './privacy/privacy.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRoutingModule } from "./app-routing/app-routing.module";
+import { CarouselModule } from "ngx-owl-carousel-o";
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AppRoutingModule } from "./app-routing/app-routing.module";
   ],
   imports: [
     BrowserModule,
+    CarouselModule,
     BrowserAnimationsModule,
     CoreModule,
     AuthModule,
