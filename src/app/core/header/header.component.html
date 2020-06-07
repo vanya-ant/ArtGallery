@@ -2,20 +2,23 @@
   <nav class="nav">
     <ul class="hidden">
       <li>
+        <a class="logo" href="/"><img src="assets/img/logo.svg"></a>
+      </li>
+      <li>
         <a href="/artists">Artists</a>
       </li>
       <li>
         <div class="categories">
           <select id="categories"  onchange="location = this.value;">
-            <option>Categories</option>
-            <option>Painting</option>
-            <option>Photography</option>
-            <option>Illustration</option>
-            <option>Sculpture</option>
-            <option>Prints</option>
-            <option>Textile</option>
-            <option>Design</option>
-            <option>Jewelery</option>
+            <option value="items">Categories</option>
+            <option value="items">Painting</option>
+            <option value="items">Photography</option>
+            <option value="items">Illustration</option>
+            <option value="items">Sculpture</option>
+            <option value="items">Prints</option>
+            <option value="items">Textile</option>
+            <option value="items">Design</option>
+            <option value="items">Jewelery</option>
             <option value="items">All</option>
           </select>
         </div>
@@ -25,22 +28,32 @@
       <label for="search">Search</label>
       <input type="search" id="search" name="search">
     </div>
+    <div class="blog">
+      <ul>
+
+      </ul>
+    </div>
     <div class="user">
       <ul class="hidden">
+        <li>
+          <a href="/blog/articles-all">Blog</a>
+        </li>
         <li>
           <a href="/login">Login</a>
         </li>
         <li>
           <a href="/register">Register</a>
         </li>
+        <li>
+          <div class="lang">
+            <label for="language"></label>
+            <select id="language">
+              <option>EN</option>
+              <option>BG</option>
+            </select>
+          </div>
+        </li>
       </ul>
-      <div class="lang">
-        <label for="language"></label>
-        <select id="language">
-          <option>EN</option>
-          <option>BG</option>
-        </select>
-      </div>
     </div>
   </nav>
 </header>

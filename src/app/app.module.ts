@@ -20,6 +20,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRoutingModule } from "./app-routing/app-routing.module";
 import { CarouselModule } from "ngx-owl-carousel-o";
+import { BlogModule } from "./blog/blog.module";
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CarouselModule } from "ngx-owl-carousel-o";
     AuthModule,
     ArtistsModule,
     ItemsModule,
+    BlogModule,
     ToastrModule.forRoot({
       timeOut: 10000,
       positionClass: 'toast-bottom-right',

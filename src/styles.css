@@ -1,4 +1,5 @@
-/*reset*/
+/*
+!*reset*!
 * {
   padding: 0;
   margin:0;
@@ -12,7 +13,7 @@ body, html {
 :before, :after {
   box-sizing: inherit;
 }
-/*main*/
+!*main*!
 .container {
   height: auto;
   width: 100vw;
@@ -26,17 +27,17 @@ button:hover {
   cursor: pointer;
 }
 
-/*header-nav*/
+!*header-nav*!
 
-/*footer*/
+!*footer*!
 
-/*home*/
+!*home*!
 
-/*gallery*/
+!*gallery*!
 
-/*login-register*/
+!*login-register*!
 
-/*admin-add-item*/
+!*admin-add-item*!
 .add-item {
   background: lightgray;
   width: 100%;
@@ -84,7 +85,7 @@ button:hover {
   font: inherit;
 }
 
-/*admin-add-artist*/
+!*admin-add-artist*!
 .add-artist {
   background: lightgray;
   width: 100%;
@@ -130,3 +131,4 @@ button:hover {
 .toast-error {
   color: orangered;
 }
+*/

@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { AngularFireStorage } from "@angular/fire/storage";
 import firebase from "firebase/app";
-import {Item} from "../item";
+import { IItem } from "../item";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItemsService {
-  item: Item;
+  item: IItem;
   private db = firebase.firestore();
 
   constructor(private afStor: AngularFireStorage) { }
 
-  async createItem(item: Item) {
+  async createItem(item: IItem) {
     const createdItem = await this.db.collection('art-items').add({...item});
     await this.getAllItems();
     return createdItem;

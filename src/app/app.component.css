@@ -15,7 +15,8 @@ body, html {
 /*main*/
 .container {
   height: auto;
-  width: 100vw;
+  min-width: 100vw;
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -24,4 +25,8 @@ body, html {
 
 button:hover {
   cursor: pointer;
+}
+
+.toast-error {
+  color: orangered;
 }

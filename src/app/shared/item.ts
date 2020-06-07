@@ -1,4 +1,5 @@
-export class Item {
+export interface IItem {
+  id: string;
   name: string;
   artist: string;
   category: string;

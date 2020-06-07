@@ -4,7 +4,7 @@ import {HomeComponent} from "../home/home.component";
 import {LoginComponent} from "../auth/login/login.component";
 import {RegisterComponent} from "../auth/register/register.component";
 import {ContactsComponent} from "../contacts/contacts.component";
-import {ArtistsComponent} from "../artists/artists.component";
+import {ArtistsComponent} from "../artists/artists-list/artists.component";
 import {ArtistCreateComponent} from "../artists/artist-create/artist-create.component";
 import {ItemsComponent} from "../items/items/items.component";
 import {ItemDetailsComponent} from "../items/item-details/item-details.component";
@@ -14,6 +14,9 @@ import {AboutComponent} from "../about/about.component";
 import {ForgotPasswordComponent} from "../forgot-password/forgot-password.component";
 import {PrivacyComponent} from "../privacy/privacy.component";
 import {NotFoundComponent} from "../not-found/not-found.component";
+import {ArtistDetailsComponent} from "../artists/artist-details/artist-details.component";
+import {ArticlesAllComponent} from "../blog/articles-all/articles-all.component";
+import {ArticleDetailsComponent} from "../blog/article-details/article-details.component";
 
 const routes: Routes = [
   {
@@ -44,8 +47,21 @@ const routes: Routes = [
   },
   {
     path: 'artists',
-    component: ArtistsComponent,
-    loadChildren: () => import('../artists/artists.module').then(m => m.ArtistsModule),
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        component: ArtistsComponent,
+      },
+      {
+        path: ':id',
+        component: ArtistDetailsComponent,
+        loadChildren: () => import('../artists/artists.module').then(m => m.ArtistsModule),
+        data: {
+          isLogged: false
+        }
+      }
+    ],
     data: {
       isLogged: false
     }
@@ -55,7 +71,8 @@ const routes: Routes = [
     component: ArtistCreateComponent,
     loadChildren: () => import('../artists/artists.module').then(m => m.ArtistsModule),
     data: {
-      isLogged: false
+      isLogged: true,
+      isAdmin: true
     }
   },
   {
@@ -85,7 +102,42 @@ const routes: Routes = [
     loadChildren: () => import('../items/items.module').then(m => m.ItemsModule),
     canActivate: [AuthGuard],
     data: {
-      isLogged: true
+      isLogged: true,
+      isAdmin: true
+    }
+  },
+  {
+    path: 'blog',
+    children: [
+      {
+        path: 'articles-all',
+        component: ArticlesAllComponent,
+        loadChildren: () => import('../blog/blog.module').then(m => m.BlogModule),
+        data: {
+          isLogged: false
+        }
+      },
+      {
+        path: ':id',
+        component: ArticleDetailsComponent,
+        loadChildren: () => import('../blog/blog.module').then(m => m.BlogModule),
+        data: {
+          isLogged: false
+        }
+      }
+    ],
+    data: {
+      isLogged: false
+    }
+  },
+  {
+    path: 'article-create',
+    component: ArtistCreateComponent,
+    loadChildren: () => import('../blog/blog.module').then(m => m.BlogModule),
+    canActivate: [AuthGuard],
+    data: {
+      isLogged: true,
+      isAdmin: true,
     }
   },
   {
