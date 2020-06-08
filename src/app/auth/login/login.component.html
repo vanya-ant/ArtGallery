@@ -4,11 +4,11 @@
         <img src="././assets/img/ann-di-B99wnwHvALg-unsplash.jpg">
       </div>
       <div class="login">
-        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <form [formGroup]="form" (ngSubmit)="login()">
           <h2>Login</h2>
           <label for="email">Email address</label>
           <input formControlName="email" id="email" type="email" placeholder="Enter email...">
-          <div *ngIf="email.dirty && email.invalid">
+          <div *ngIf="username.dirty && username.invalid">
             <p class="toast-error">Email not valid!</p>
           </div>
           <label for="password">Password</label>

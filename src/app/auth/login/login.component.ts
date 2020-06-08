@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from "@angular/fire/auth";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AuthorizeService} from '../../shared/services/auth.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -12,78 +13,28 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  type: 'login' | 'signup' | 'reset' = 'signup';
-  loading = false;
-
-  serverMessage: string;
-
-  constructor(private afAuth: AngularFireAuth, private fb: FormBuilder) {}
-
-  ngOnInit() {
+  constructor(private fb: FormBuilder, private authService: AuthorizeService, private router: Router) {
     this.form = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: [
-        '',
-        [Validators.minLength(6), Validators.required]
-      ],
-      passwordConfirm: ['', []]
+      email: ['', Validators.required, Validators.email],
+      password: ['', Validators.required]
     });
   }
 
-  changeType(val) {
-    this.type = val;
+  ngOnInit() {
   }
 
-  get isLogin() {
-    return this.type === 'login';
+  login() {
+    this.authService.login(this.form.value).subscribe(data => {
+      this.authService.saveToken(data.token);
+      this.router.navigate(['items-all']);
+    });
   }
 
-  get isSignup() {
-    return this.type === 'signup';
+  get username() {
+    return this.form.get('username');
   }
 
-  get isPasswordReset() {
-    return this.type === 'reset';
-  }
-
-  get email() {
-    return this.form.get('email');
-  }
   get password() {
     return this.form.get('password');
   }
-
-  get passwordConfirm() {
-    return this.form.get('passwordConfirm');
-  }
-
-  get passwordDoesMatch() {
-    if (this.type !== 'signup') {
-      return true;
-    } else {
-      return this.password.value === this.passwordConfirm.value;
-    }
-  }
-
-  async onSubmit() {
-    this.loading = true;
-
-    const email = this.email.value;
-    const password = this.password.value;
-
-    try {
-      if (this.isLogin) {
-        await this.afAuth.signInWithEmailAndPassword(email, password);
-      }
-      if (this.isPasswordReset) {
-        await this.afAuth.sendPasswordResetEmail(email);
-        this.serverMessage = 'Check your email';
-      }
-    } catch (err) {
-      this.serverMessage = err;
-    }
-
-    this.loading = false;
-  }
-
 }

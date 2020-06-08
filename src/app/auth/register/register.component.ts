@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AngularFireAuth} from "@angular/fire/auth";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AuthorizeService} from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -11,72 +11,26 @@ export class RegisterComponent implements OnInit {
 
   form: FormGroup;
 
-  type: 'login' | 'signup' | 'reset' = 'signup';
-  loading = false;
-
-  serverMessage: string;
-
-  constructor(private afAuth: AngularFireAuth, private fb: FormBuilder) {}
+  constructor(private authService: AuthorizeService, private fb: FormBuilder) {}
 
   ngOnInit() {
-    this.form = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: [
-        '',
-        [Validators.minLength(6), Validators.required]
-      ],
-      passwordConfirm: ['', []]
+  }
+
+  register() {
+    this.authService.register(this.form.value).subscribe(data => {
+      console.log(data);
     });
   }
 
-  changeType(val) {
-    this.type = val;
-  }
-
-  get isLogin() {
-    return this.type === 'login';
-  }
-
-  get isSignup() {
-    return this.type === 'signup';
-  }
-
-  get isPasswordReset() {
-    return this.type === 'reset';
+  get username() {
+    return this.form.get('username');
   }
 
   get email() {
     return this.form.get('email');
   }
+
   get password() {
     return this.form.get('password');
   }
-
-  get passwordConfirm() {
-    return this.form.get('passwordConfirm');
-  }
-
-  get passwordDoesMatch() {
-    if (this.type !== 'signup') {
-      return true;
-    } else {
-      return this.password.value === this.passwordConfirm.value;
-    }
-  }
-
-  async onSubmit() {
-    this.loading = true;
-
-    const email = this.email.value;
-    const password = this.password.value;
-
-    try {
-        await this.afAuth.createUserWithEmailAndPassword(email, password);
-    } catch (err) {
-      this.serverMessage = err;
-    }
-
-    this.loading = false;
-  }
-
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFireStorage } from "@angular/fire/storage";
-import firebase from "firebase/app";
-import { IItem } from "../item";
+import { AngularFireStorage } from '@angular/fire/storage';
+import firebase from 'firebase/app';
+import { IItem } from '../item';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +21,5 @@ export class ItemsService {
   async getAllItems() {
     const items = await this.db.collection('art-items').get();
     return items.docs.map(doc => doc.data());
-  };
+  }
 }

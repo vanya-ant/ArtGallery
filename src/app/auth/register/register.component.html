@@ -4,7 +4,7 @@
         <img src="././assets/img/heather-ford-YAHlwESEjXo-unsplash.jpg">
       </div>
       <div class="login">
-        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <form [formGroup]="form" (ngSubmit)="register()">
           <h2>Register</h2>
           <label for="email">Email address</label>
           <input id="email" formControlName="email" type="email" placeholder="Enter email...">
@@ -16,11 +16,11 @@
           <div *ngIf="password.dirty && password.invalid">
             <p class="toast-error">Password must be at least 6 characters long!</p>
           </div>
-          <label for="passwordConfirm">Repeat password</label>
+<!--          <label for="passwordConfirm">Repeat password</label>
           <input id="passwordConfirm" formControlName="passwordConfirm" type="password" placeholder="Repeat password...">
           <div *ngIf="passwordConfirm.dirty && !passwordDoesMatch">
             <p class="toast-error">Passwords dont' match!</p>
-          </div>
+          </div>-->
           <button class="login-register-button" onclick="">Register</button>
         </form>
       </div>
