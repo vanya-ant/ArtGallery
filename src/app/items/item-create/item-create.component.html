@@ -1,0 +1,25 @@
+
+    <div class="add-item">
+      <form [formGroup]="form" (ngSubmit)="create()">
+        <h2>Add item</h2>
+        <label for="name">Name</label>
+        <input formControlName="name" id="name" type="text" placeholder="Add item name..."/>
+        <label for="artist">Artist</label>
+        <input formControlName="artist" id="artist" type="text" placeholder="Add artist name..."/>
+        <label for="category">Category</label>
+        <div class="categories">
+          <select id="category" formControlName="category" (ngModelChange)="run()">
+            <option *ngFor="let category of options" [ngValue]="category">
+              {{ category.name }}
+            </option>
+          </select>
+        </div>
+        <label for="description">Description</label>
+        <textarea id="description" placeholder="Add item description..."></textarea>
+        <label for="file">Image</label>
+        <input #image id="file" type="file" (change)="upload($event)" accept=".png,.jpg" autocomplete="off" />
+        <label for="price">Price</label>
+        <input id="price" type="number" min="0" placeholder="Add item price..."/>
+        <button class="add-item-button">Create item</button>
+      </form>
+    </div>

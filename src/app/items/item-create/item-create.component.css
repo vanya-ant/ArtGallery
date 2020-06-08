@@ -1,0 +1,55 @@
+.add-item {
+  background: lightgray;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+}
+
+.add-item form {
+  background: white;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  margin: 1em auto;
+}
+
+.add-item-button {
+  background: black;
+  color: white;
+  text-align: center;
+  border: none;
+  width: 10em;
+  height: 3em;
+  margin-top: 1em;
+  font: inherit;
+}
+
+.add-item label {
+  padding-bottom: 1em;
+  padding-top: 1em;
+  text-align: left;
+}
+
+.add-item input {
+  width: 10em;
+  height: 2em;
+  text-align: center;
+  font: inherit;
+}
+
+.add-item textarea {
+  text-align: center;
+  font: inherit;
+}
+
+.categories {
+  padding-bottom: 1em;
+}
+
+select {
+  font-family: inherit;
+  padding: 0.5em;
+}
