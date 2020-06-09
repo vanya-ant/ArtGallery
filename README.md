@@ -1,2 +1,2 @@
 # ArtGallery
-Angular9 &amp; Firebase
+Angular9 &amp; .NET 3.1
